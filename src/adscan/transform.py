@@ -301,11 +301,10 @@ def modify_snippet_for_elembody(snippet, content, base_snippet=None, base_values
   regex_for_tags_in_js = r"""
     \<  # The beginning of a tag.
     (?P<TAG>[a-zA-Z][\w\-]*)  # Tag name.
-    (?:\s+
-      (?:[\w\-]+\=[^\s\<\>]+)*
-    )*  # Attribute.
+    (?:\s+[\w\-]+\=\s*[^\s\<\>]+)*  # Attribute.
+    \s*
     (?P<ATTR>[\w\-]+)  # Attribute name.
-    \=[\s\'\"]?%s[^\>]*\>  # Value the contains a string specified into '%%s'.
+    \=\s*[\'\"]?%s[^\>]*\>  # Value the contains a string specified into '%%s'.
   """
 
   regex_src_bg = re.compile(r'src|background', re.IGNORECASE)
