@@ -152,6 +152,7 @@ class BrowserHost(threading.Thread):
     command = []
     if self.display_id < 0:
       command.extend(['/usr/bin/xvfb-run', '--auto-servernum', '--server-args', '-screen 0 1024x768x24'])
+    command.extend(['timeout', '20s'])
     command.append(self.phantomjs)
     command.extend(['--web-security', 'false'])
     command.extend(['--load-plugins', 'true'])
