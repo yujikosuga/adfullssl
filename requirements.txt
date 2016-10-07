@@ -4,5 +4,4 @@ googleads>=3.0.0
 lxml
 nose
 SQLAlchemy>=0.9.4
-requests==2.2.1
-requests[security]
+requests>=2.2.1
