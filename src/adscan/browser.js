@@ -106,7 +106,7 @@ var browser = {};
   var isPrivateNetwork = function(url) {
     var ip = undefined;
 
-    if(options.ipLookupUrl) {
+    if(url && !/^(data:|blob:)/.test(url) && options.ipLookupUrl) {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', options.ipLookupUrl + '?url=' + encodeURIComponent(url), false);
       xhr.onreadystatechange = function() {
