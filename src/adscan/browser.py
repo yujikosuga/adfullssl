@@ -120,11 +120,6 @@ class BrowserHost(threading.Thread):
     session.max_redirects = 100
     if data:
       for key, value in data.iteritems():
-        try:
-          int(key)
-        except ValueError:
-          continue
-
         if data[key]['error'] and data[key]['error']['errorCode'] and data[key]['error']['errorCode'] == 999:
           issue_id = IssueType.PRIVATE_NETWORK
         else:
