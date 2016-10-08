@@ -29,7 +29,7 @@ import googleads.dfp
 import googleads.errors
 
 
-DFP_VERSION = 'v201505'
+DFP_VERSION = 'v201608'
 
 CLIENT = googleads.dfp.DfpClient.LoadFromStorage()
 
